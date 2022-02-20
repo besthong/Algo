@@ -18,7 +18,6 @@ def multiply(m1,m2):
             dummy[i][j]%=c
     return dummy
 
-
 def power(a,b):
     if b==1:
         return a
