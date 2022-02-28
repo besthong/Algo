@@ -61,9 +61,7 @@ def bfs():
                 if graph[nx][ny]==0:
                     graph[nx][ny]=graph[cur[0]][cur[1]]+1
                     q.append((nx,ny))
-
 bfs()
-
 for i in graph:
     for j in i:
         if j == 0:
