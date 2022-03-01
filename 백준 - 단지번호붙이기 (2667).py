@@ -28,6 +28,9 @@
 # print(*ans, sep='\n')
 
 
+'''
+DFS를 사용하여 풀었고, 위,아래,왼,오 계산을 미리 만들어 리스트로 저장 한 상태로 진행했다.
+'''
 
 from collections import deque
 case = int(input())

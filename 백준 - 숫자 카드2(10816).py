@@ -1,3 +1,6 @@
+'''
+딕셔너리 O(1) 을 사용하여 풀어봤다.
+'''
 n = int(input())
 n_list = sorted(list(map(int,input().split())))
 m = int(input())

@@ -1,3 +1,8 @@
+'''
+한번 타고 들어갈 때 끝까지 가서 연결이 되어있나 확인이 필요하니
+DFS를 사용했다.
+'''
+
 import sys
 input = sys.stdin.readline
 

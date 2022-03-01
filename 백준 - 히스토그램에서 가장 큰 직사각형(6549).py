@@ -1,3 +1,8 @@
+'''
+해당 문제는 꽤나 어려워서 검색의 도움을 좀 받았다.
+이 문제를 풀면서 세그먼트 트리를 다시금 공부 할 수 있었고,
+스택의 편리성을 다시한번 깨달았다.
+'''
 import math,sys
 input = sys.stdin.readline
 sys.setrecursionlimit(10**6)

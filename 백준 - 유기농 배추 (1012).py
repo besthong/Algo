@@ -1,3 +1,8 @@
+'''
+DFS를 사용하여 쉽게 풀 수 있다.
+해당 문제에서는 파이썬 기본으로 걸려있는 재귀함수 최대횟수(1000회) 가 넘어가서 에러가 발생한다.
+따라서 sys.setrecursionlimit(10**5)까지 재귀 할 수 있도록 설정한다.
+'''
 import sys
 sys.setrecursionlimit(10**5)
 
@@ -12,7 +17,6 @@ def dfs(x,y):
     if x<0 or x>=n or y<0 or y>=m:
         return False
     if graph[x][y]==1:
-        # count+=1
         graph[x][y]=0
         for i in range(4):
             nx=x+dx[i]
