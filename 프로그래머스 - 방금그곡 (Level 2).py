@@ -18,7 +18,7 @@ def replaceFunc(word):
     return "".join(temp)
 
 def solution(m, musicinfos):
-    answer = []
+    answer = []y
     m = replaceFunc(m)
     for i in musicinfos:
         i = list(i.split(","))
