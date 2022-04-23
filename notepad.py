@@ -1,3 +1,98 @@
+n,m = map(int,input().split())
+graph = []
+
+for i in range(m):
+    u,v,w = list(map(int,input().split()))
+    graph.append([u,v,w])
+
+def bellmanFord(src):
+    dist = [float('inf') for i in range(n+1)]
+    dist[src] = 0
+
+    for i in range(n-1):
+        for u,v,w in graph:
+            if dist[u] != float('inf') and dist[u]+w < dist[v]:
+                dist[v] = dist[u]+w
+
+    cycle = 0
+    for u,v,w in graph:
+        if dist[u] != float('inf') and dist[u] + w < dist[v]:
+            print("graph contains negative weight cycle")
+            cycle = 1
+            break
+    if cycle == 0:
+        print("Distance from source vertex", src)
+        print('Vertex \t Distance from source')
+        for i in range(1,len(dist)):
+            print(i,'\t',dist[i])
+
+bellmanFord(1)
+
+# def bellman_ford(graph,start):
+#     distance, predecessor = dict(),dict()
+#     for node in graph:
+#         distance[node] = float('inf')
+#         predecessor[node] = None
+#     distance[start] = 0
+#
+#     for i in range(len(graph)-1):
+#         for node in graph:
+#             for neighbor in graph[node]:
+#                 if distance[neighbor] > distance[node]+graph[node][neighbor]:
+#                     distance[neighbor] = distance[node] + graph[node][neighbor]
+#                     predecessor[neighbor] = node
+#
+#     for node in graph:
+#         for neighbor in graph[node]:
+#             if distance[neighbor] > distance[node] + graph[node][neighbor]:
+#                 return -1
+#
+#     return distance, predecessor
+#
+#
+# graph = {
+#     'A': {'B':-1, 'C':4},
+#     'B': {'C':3, 'D':2, 'E':2},
+#     'C':{},
+#     'D': {'B':1, 'C':5},
+#     'E': {'D': -3}
+# }
+#
+# print(bellman_ford(graph,'A'))
+
+
+# def dijkstra(graph,start):
+#
+#     distances = { node:float('inf') for node in graph.keys() }
+#     distances[start] = 0    # 첫 시작 노드는 0
+#     q = []
+#     heapq.heappush(q,[distances[start],start])
+#
+#     while q:
+#         cur_dis, cur_dst = heapq.heappop(q)         # q에 있는 데이터 순회함.
+#
+#         if distances[cur_dst] < cur_dis:            # 기존 거리보다 길다면 볼 필요 없음
+#             continue
+#
+#         for new_des, new_dis in graph[cur_dst].items():
+#             distance = cur_dis + new_dis            # 해당 노드 거쳐갈때 기존목표 거리와 현재 목표 거리 더하기
+#             if distance < distances[new_des]:       # 저장되어있는 거리보다 작을경우 갱신
+#                 distances[new_des] = distance
+#                 heapq.heappush(q, [distance, new_des]) # PQ에 저장
+#
+#     return distances
+
+#
+# graph = {
+#     'A': {'B': 8, 'C': 1, 'D': 2},
+#     'B': {},
+#     'C': {'B': 5, 'D': 2},
+#     'D': {'E': 3, 'F': 5},
+#     'E': {'F': 1},
+#     'F': {'A': 5}
+# }
+# print(dijkstra(graph,'A'))
+
 
 # def solution(logs):
 #     answer = 0
@@ -60,33 +155,7 @@
 # logs = ["team_name : db application_name : dbtest error_level : info message : test", "team_name : test application_name : I DONT CARE error_level : error message : x", "team_name : ThisIsJustForTest application_name : TestAndTestAndTestAndTest error_level : test message : IAlwaysTestingAndIWillTestForever", "team_name : oberervability application_name : LogViewer error_level : error"]
 # print(solution(logs))
 #
-#
-#
-#
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#
 # def solution(orders):
 #     answer = []
 #     dic = {}
