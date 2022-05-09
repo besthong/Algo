@@ -12,7 +12,7 @@ def solution(n, results):
     graph = [[float('inf')]*n for _ in range(n)]
 
     # 1. 각 주어진 이긴 순위 정보 토대로 승패 관계 리스트 생성
-    for (a,b) in results:
+    for a,b in results:
         graph[a-1][b-1] = min(graph[a-1][b-1],1)
 
     # 2. a->b, b->c 인 경우 a->c 이므로 추가로 승패 작업 업데이트
