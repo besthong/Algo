@@ -1,33 +1,54 @@
+def solve_max_sum(arr,k):
+    max_sum = float('-inf')
+    start = 0
+    curr_sum = 0
 
-n,m = map(int,input().split())
-graph = []
+    for end,val in enumerate(arr):
+        curr_sum += val
 
-for i in range(m):
-    u,v,w = list(map(int,input().split()))
-    graph.append([u,v,w])
+        if end - start + 1 == k:
+            max_sum = max(max_sum, curr_sum)
+            curr_sum -= arr[start]
+            start += 1
 
-def bellmanFord(src):
-    dist = [float('inf') for i in range(n+1)]
-    dist[src] = 0
+    return max_sum
 
-    for i in range(n-1):
-        for u,v,w in graph:
-            if dist[u] != float('inf') and dist[u]+w < dist[v]:
-                dist[v] = dist[u]+w
+arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+k = 3
 
-    cycle = 0
-    for u,v,w in graph:
-        if dist[u] != float('inf') and dist[u] + w < dist[v]:
-            print("graph contains negative weight cycle")
-            cycle = 1
-            break
-    if cycle == 0:
-        print("Distance from source vertex", src)
-        print('Vertex \t Distance from source')
-        for i in range(1,len(dist)):
-            print(i,'\t',dist[i])
+print(solve_max_sum(arr,k))
 
-bellmanFord(1)
+
+#
+# n,m = map(int,input().split())
+# graph = []
+#
+# for i in range(m):
+#     u,v,w = list(map(int,input().split()))
+#     graph.append([u,v,w])
+#
+# def bellmanFord(src):
+#     dist = [float('inf') for i in range(n+1)]
+#     dist[src] = 0
+#
+#     for i in range(n-1):
+#         for u,v,w in graph:
+#             if dist[u] != float('inf') and dist[u]+w < dist[v]:
+#                 dist[v] = dist[u]+w
+#
+#     cycle = 0
+#     for u,v,w in graph:
+#         if dist[u] != float('inf') and dist[u] + w < dist[v]:
+#             print("graph contains negative weight cycle")
+#             cycle = 1
+#             break
+#     if cycle == 0:
+#         print("Distance from source vertex", src)
+#         print('Vertex \t Distance from source')
+#         for i in range(1,len(dist)):
+#             print(i,'\t',dist[i])
+#
+# bellmanFord(1)
 
 # def bellman_ford(graph,start):
 #     distance, predecessor = dict(),dict()
