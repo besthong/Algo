@@ -9,7 +9,7 @@
 list화 하여 sum이 n과 같을경우 answer+=1을 하여 return 하도록 했으며
 당연히 시간초과,메모리초과를 예상했다.
 
-제출은 1번으로
+제출은 1번으로ㅋ
 '''
 #dp 풀이
 def solution(n):
