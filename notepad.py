@@ -1,22 +1,31 @@
-def solve_max_sum(arr,k):
-    max_sum = float('-inf')
-    start = 0
-    curr_sum = 0
+res1 = [['.' for _ in range(4)] for _ in range(4)]
+res2 = ['.' * 4] * 4
 
-    for end,val in enumerate(arr):
-        curr_sum += val
+print(res1)
+print(res2)
 
-        if end - start + 1 == k:
-            max_sum = max(max_sum, curr_sum)
-            curr_sum -= arr[start]
-            start += 1
+print(type(res1[0]))
+print(type(res2[0]))
 
-    return max_sum
-
-arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-k = 3
-
-print(solve_max_sum(arr,k))
+# def solve_max_sum(arr,k):
+#     max_sum = float('-inf')
+#     start = 0
+#     curr_sum = 0
+#
+#     for end,val in enumerate(arr):
+#         curr_sum += val
+#
+#         if end - start + 1 == k:
+#             max_sum = max(max_sum, curr_sum)
+#             curr_sum -= arr[start]
+#             start += 1
+#
+#     return max_sum
+#
+# arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+# k = 3
+#
+# print(solve_max_sum(arr,k))
 
 
 #
