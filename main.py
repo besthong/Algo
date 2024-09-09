@@ -1,16 +1,25 @@
-# This is a sample Python script.
+def solution(a):
+    answer = []
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+    one=[1,2,3,4,5]
+    two=[2,1,2,3,2,4,2,5]
+    three=[3,3,1,1,2,2,4,4,5,5]
 
+    one_cnt=0
+    two_cnt=0
+    three_cnt=0
+    for i in range(0,len(a)):
+        if one[i%5]==a[i]: one_cnt+=1
+        if two[i%8]==a[i]: two_cnt+=1
+        if three[i%10]==a[i]: three_cnt+=1
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+    temp=[one_cnt,two_cnt,three_cnt]
+    big=max(temp)
 
+    for i in range(len(temp)):
+        if temp[i]==big:
+            answer.append(i+1)
+    return answer
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+a=[1,2,3,4,5]
+print(solution(a))
