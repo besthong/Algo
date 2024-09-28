@@ -3,7 +3,7 @@
 당연히 시간초과가 났고, correct는 맞길래 시간을 어떻게 단축 할 수 있을까 생각하다보니
 O(nlog(n))으로 작동 할 수 있는 binary search를 적용하기로 했다.
 mid값을 정하고, mid값을 level로 지정했을때, 해당값이 limit보다 작을경우, left = mid+1 아닐경우 right = mid-1
-이렇게 풀면 통과 가능하다.
+이렇게 풀면 통과 가능하다!!
 '''
 # def cal(diff,time_cur,time_prev,level): # 5,4,2,3
 #     return (time_cur+time_prev)*(diff-level)+time_cur
