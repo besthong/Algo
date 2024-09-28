@@ -2,3 +2,10 @@
 ./test.py
 ./notepad.py
 ./hackerrank - A Very Big Sum.py
+main.py
+test.py
+notepad.py
+hackerrank - A Very Big Sum.py
+.DS_Store
+.gitignore
+.idea
