@@ -19,7 +19,6 @@ def remove_prime_factors(n, gcd_val):
 
     return n
 
-
 def has_same_prime_divisors(N, M):
     G = gcd(N, M)
 
